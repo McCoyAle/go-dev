@@ -37,6 +37,7 @@ func main() {
 		"LGBTStatus",
 		"Promotion",
 		"InclusionProgramParticipant",
+		"Salary",
 	}
 	err = writer.Write(header)
 	if err != nil {
@@ -63,6 +64,7 @@ func main() {
 		lgbtStatus := randBool()
 		promotion := randBool()
 		inclusionProgramParticipant := randBool()
+		salary := strconv.Itoa(rand.Intn(200000) + 88000)
 
 		record := []string{
 			employeeID,
@@ -79,6 +81,7 @@ func main() {
 			lgbtStatus,
 			promotion,
 			inclusionProgramParticipant,
+			salary,
 		}
 
 		err := writer.Write(record)
@@ -97,25 +100,25 @@ func randGender() string {
 
 // Helper function to generate random ethnicity
 func randEthnicity() string {
-	ethnicities := []string{"White", "Black", "Hispanic", "Asian"}
+	ethnicities := []string{"White", "Black", "Hispanic", "Asian", "Indian"}
 	return ethnicities[rand.Intn(len(ethnicities))]
 }
 
 // Helper function to generate random department
 func randDepartment() string {
-	departments := []string{"Sales", "Marketing", "Engineering", "Finance", "HR"}
+	departments := []string{"Sales", "Marketing", "Engineering", "Finance", "HR", "Legal"}
 	return departments[rand.Intn(len(departments))]
 }
 
 // Helper function to generate random job title
 func randJobTitle() string {
-	jobTitles := []string{"Manager", "Engineer", "Analyst", "Specialist"}
+	jobTitles := []string{"Manager", "Engineer", "Analyst", "Specialist", "Leadership"}
 	return jobTitles[rand.Intn(len(jobTitles))]
 }
 
 // Helper function to generate random location
 func randLocation() string {
-	locations := []string{"New York", "Los Angeles", "Chicago", "Houston", "Atlanta"}
+	locations := []string{"New York", "Los Angeles", "Chicago", "Houston", "Atlanta", "Austin"}
 	return locations[rand.Intn(len(locations))]
 }
 
